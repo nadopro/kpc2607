@@ -271,3 +271,114 @@ body에서 include "login.php"; 와 같이 처리하고 싶어.
 
 </body>
 </html>
+
+Q4.
+
+이와 같이 index.php을 모두 거치도록 구조가 결정되었어.
+index.php?cmd=injection을 링크로 만들었어.
+즉 injection.php을 include하면 되는 상황이야.
+이 파일은 sql injection을 연습해보고 싶어.
+로그인 창을 만들고, id, pass를 입력받아.
+CREATE TABLE users (
+    idx INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id VARCHAR(20) NOT NULL UNIQUE,
+    name VARCHAR(30) NOT NULL,
+    pass VARCHAR(50) NOT NULL,
+    level INT(3) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+이 테이블에 암호화하지 말고, 단순하게 id, pass검사하는 코드를 만들어줘.
+
+index.php에서 이미 DB연결은 끝나고 $conn로 사용이 가능해.
+
+mysqli_query()와 mysqli_fetch_array()를 이용해 줘.
+
+
+Q5.
+
+현재 코드가 다음과 같은데, 여기에 세션처리까지 해서,
+로그인 기록을 남겨줘.
+
+<?php
+// injection.php
+?>
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                SQL Injection 실습 (취약한 로그인)
+            </div>
+
+            <div class="card-body">
+
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+    $id   = $_POST['id'];
+    $pass = $_POST['pass'];
+
+    // -------------------------------
+    // 취약한 SQL (실습용)
+    // -------------------------------
+    $sql = "SELECT * FROM users
+            WHERE id='$id'
+            AND pass='$pass'";
+
+    echo "<div class='alert alert-secondary'>";
+    echo "<b>실행된 SQL</b><br>";
+    //echo htmlspecialchars($sql);
+    echo "</div>";
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($row = mysqli_fetch_array($result)) {
+
+        echo "<div class='alert alert-success'>";
+        echo "로그인 성공<br>";
+        echo "이름 : {$row['name']}<br>";
+        echo "권한 : {$row['level']}";
+        echo "</div>";
+
+    } else {
+
+        echo "<div class='alert alert-danger'>";
+        echo "로그인 실패";
+        echo "</div>";
+
+    }
+
+}
+
+?>
+
+<form method="post">
+
+    <div class="mb-3">
+        <label class="form-label">ID</label>
+        <input type="text"
+               name="id"
+               class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password"
+               name="pass"
+               class="form-control">
+    </div>
+
+    <button class="btn btn-danger">
+        Login
+    </button>
+
+</form>
+
+            </div>
+        </div>
+
+    </div>
+</div>

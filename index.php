@@ -44,7 +44,7 @@ $cmd = $_GET['cmd'] ?? "init";
                         취약점 확인
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.php?cmd=sqli">SQL Injection</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=injection">SQL Injection</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=sqli_secure">SQL Injection(Secure)</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=xss">XSS</a></li>
                     </ul>

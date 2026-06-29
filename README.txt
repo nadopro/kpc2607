@@ -99,3 +99,29 @@ menu3에는 menu3-1, menu3-2 로 구성되어 있어.
 맨 아래에 배치되도록 구성해 줘.
 
 
+2. MySQL을 사용해서 users 테이블 스키마를 만들고 싶어.
+
+  idx auto_increment primary key,
+  id varchar(20) unique,
+  name varchar(30),
+  pass varchar(50),
+  level int(3) default '1'
+
+
+CREATE TABLE users (
+    idx INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id VARCHAR(20) NOT NULL UNIQUE,
+    name VARCHAR(30) NOT NULL,
+    pass VARCHAR(50) NOT NULL,
+    level INT(3) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+INSERT INTO users (id, name, pass, level)
+VALUES ('admin', '관리자', '1234', 9);
+
+INSERT INTO users (id, name, pass, level)
+VALUES ('test', '테스트', '1234', 1);
+
+INSERT INTO users (id, name, pass, level)
+VALUES ('test', '테스트', '1234', 1);

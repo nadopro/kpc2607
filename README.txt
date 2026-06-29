@@ -139,3 +139,135 @@ dbPass : 1111
 mysqli()를 이용해서 함수화 하고 싶어.
 
 closeDB($conn)도 같이 만들어 줘.
+
+
+
+
+connectDB();
+
+for(;;)
+{
+  insert into ...()
+}
+
+closeDB()
+
+
+
+
+for(;;)
+{
+  connectDB();
+  insert into ...()
+  closeDB()  
+}
+
+GET/POST의 차이
+
+GET : 주소창에 파라미터를 전달
+  예) test.php?name=test&pass=1234&age=10
+  https://newsstand.naver.com/?list&pcode=117
+
+POST : Request Body 속에 파라미터를 전달
+
+
+javascript:alert(document.cookie)
+
+
+Q3. 현재 index.php 파일이 다음과 같이 되어 있어.
+이때 index.php?cmd=test와 같이 GET 방식으로 cmd값을 찾으려고 해.
+즉, cmd = $_GET['cmd']; 와 같이 처리할 거야.
+만약에 cmd가 없으면 init를 default로 해 줘.
+바디 부분은 include "$cmd.php"; 와 같이 처리할 거야.
+예를 들어서
+index.php?cmd=login 으로 되어 있으면
+body에서 include "login.php"; 와 같이 처리하고 싶어.
+
+
+<?php
+    session_save_path("./sess");
+    session_start();
+    
+    include "db.php";
+
+    $conn = connectDB();
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KPC 보안 프로그래밍 과정</title>
+
+  <!-- Bootstrap5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">KPC</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              취약점 확인
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">SQL Injection</a></li>
+              <li><a class="dropdown-item" href="#">SQL Injection(Secure)</a></li>
+              <li><a class="dropdown-item" href="#">menu1-3</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              menu2
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">menu2-1</a></li>
+              <li><a class="dropdown-item" href="#">menu2-2</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              menu3
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">menu3-1</a></li>
+              <li><a class="dropdown-item" href="#">menu3-2</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="container flex-grow-1 d-flex align-items-center justify-content-center">
+    <h1>KPC 보안 프로그래밍 과정</h1>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-light border-top py-3 mt-auto">
+    <div class="container text-center">
+      한국 생산성본부(KPC)<br>
+      정보보호책임자: 홍길동(help@kpc.or.kr)
+    </div>
+  </footer>
+
+  <!-- Bootstrap5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

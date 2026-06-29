@@ -44,4 +44,7 @@
 
     ^[가-힣]{2,4}$
 
+    https://github.com/nadopro/kpc2607
+
+    https://www.security.org/how-secure-is-my-password/
     

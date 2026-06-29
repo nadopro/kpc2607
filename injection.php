@@ -9,14 +9,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // -------------------------------
     // SQL Injection 취약 코드 (실습용)
     // -------------------------------
-    $sql = "SELECT * FROM users
-            WHERE id='$id'
-            AND pass='$pass'";
+    $sql = "SELECT * FROM users WHERE id='$id' AND pass='$pass'";
 
     $result = mysqli_query($conn, $sql);
 
+
     if ($row = mysqli_fetch_array($result)) {
 
+        echo "idx = $row[idx]<br>";
         $_SESSION['login'] = true;
         $_SESSION['idx']   = $row['idx'];
         $_SESSION['id']    = $row['id'];

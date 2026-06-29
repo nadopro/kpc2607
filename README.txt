@@ -388,3 +388,9 @@ Q6. 현재 로그인 창 아래에 로그인 버튼만 있는데,
 
 로그인된 경우에는 "로그아웃" index.php?cmd=logout
 로그인이 안된 경우는 지금처럼 동작하면 돼.
+
+
+
+
+select * from users where id='xxx' or 2>1 -- ' and pass='$pass'
+                              xxx' or 2>1 -- 

@@ -125,3 +125,17 @@ VALUES ('test', '테스트', '1234', 1);
 
 INSERT INTO users (id, name, pass, level)
 VALUES ('test', '테스트', '1234', 1);
+
+
+Q2. db.php을 하나 만들고 싶어.
+
+$conn = connectDB();
+함수를 만들고 싶어.
+
+dbName : secure
+dbUser : secure
+dbPass : 1111
+
+mysqli()를 이용해서 함수화 하고 싶어.
+
+closeDB($conn)도 같이 만들어 줘.

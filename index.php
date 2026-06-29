@@ -1,3 +1,8 @@
+<?php
+    include "db.php";
+
+    $conn = connectDB();
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>

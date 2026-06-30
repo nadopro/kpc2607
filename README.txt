@@ -586,3 +586,28 @@ Q8.
 raw 데이터가 노출되는 문제가 있어.
 패킷으로 날라갈때는 다시 암호화(인코딩)하고,
 DB와 검사할 때는 복호화해서 검사하도록 로직을 변경해 줘.
+
+update users set pass='abcd';
+
+INSERT INTO users (id, name, pass, level)
+VALUES ('tester', '테스터', 'bcdef', 1);
+INSERT INTO users (id, name, pass, level)
+VALUES ('hong', '홍길동', 'bcdef', 1);
+INSERT INTO users (id, name, pass, level)
+VALUES ('sslee', '이순신', 'cdef', 1);
+INSERT INTO users (id, name, pass, level)
+VALUES ('auth', '암호화', password('abcd'), 1);
+
+Q9. brute Force
+
+index.php?cmd=brute와 같이 접속할거야.
+index.php에서는 DB 접속을 이미 끝내고 $conn에 접속정보를 가지고 있어.
+index.php에서는 brute.php를 include하는 형태로 사용해.
+
+영문으로 된 텍스트를 찾는 원리를 코드로 만들고 싶어.
+예를 들어, aaaa, aaab, aaac....zzzz까지 검사하는 코드야.
+users 테이블의 비밀번호와 이 텍스트가 같은지 비교하는 코드를 작성할거야.
+만약에 하나라도 찾으면, 동일한 비밀번호를 갖는 아이디를 모두
+출력하고 프로그램을 종료해 줘.
+만약 반복문을 사용하는 경우에, 반복문이 1000회 수행될 때마다, 화면에 횟수를 출력해.
+최종적으로 몇 번만에 찾았는지도 출력해 줘.

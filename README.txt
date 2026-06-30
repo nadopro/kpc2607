@@ -630,3 +630,62 @@ shell.php 을 같은 방법으로 만들고 싶어.
 하단에 명령을 수행하도록 해 줘.
 만약 화면에 출력하는 과정에서 한글이 깨지는 현상이 없도록
 인코딩 처리도 해 줘.
+
+
+flush
+
+main()
+{
+  a(); printf("A\n");
+  b(); printf("B\n");
+  c(); printf("C\n");
+  fflush(stdout);
+  d(); printf("D\n");
+  fflush(stdout);
+  e(); printf("E\n");
+}
+
+A 
+B 
+
+void print(char *ptr)
+{
+  char buf[100];
+  bzero(buf, sizeof(buf)); // memset(buf, 0x0, size..)
+  strcpy(buf, ptr);
+  printf("%s", buf);
+  printf(buf);
+}
+./test hello
+./test "hello world"
+./test `python print("A"*200)`
+int main(int argc, char **argv)
+{
+  print(argv[1])
+  return 0;
+}
+
+
+Q12.
+
+다음과 같은 MySQL 스키마를 만들고 싶어.
+table name : log
+필드 정보
+  idx : integer, auto_increment, primary key
+  ip : IP Address 저장 예: 1.2.3.4
+  id : 사용자의 아이디를 저장
+  work : varchar(255)
+  time : datetime
+
+  2026-06-30 12:34:56
+
+
+  CREATE TABLE log (
+    idx INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    ip VARCHAR(45) NOT NULL,
+    id VARCHAR(20) NOT NULL,
+    work VARCHAR(255) NOT NULL,
+    time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_unicode_ci;

@@ -8,6 +8,23 @@ $conn = connectDB();
 
 // cmd가 없으면 init
 $cmd = $_GET['cmd'] ?? "init";
+
+$ip1 = rand(1,255);
+$ip2 = rand(1, 255);
+$ip3 = rand(1, 255);
+$ip4 = rand(1, 255);
+
+$ip = $_SERVER["REMOTE_ADDR"];
+$ip = "$ip1.$ip2.$ip3.$ip4";
+$myid = isset($_SESSION['id']) ? $_SESSION['id'] : '';
+$work = $_SERVER['QUERY_STRING'];
+
+    $sql = "insert into log (ip, id, work, time) values 
+                ('$ip', '$myid', '$work', now())";
+
+    $result = mysqli_query($conn, $sql);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">

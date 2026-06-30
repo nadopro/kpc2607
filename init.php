@@ -3,5 +3,5 @@ IP = <?php echo $_SERVER["REMOTE_ADDR"] ?> <br>
 
 
 <?php
-    phpinfo();
+    //phpinfo();
 ?>

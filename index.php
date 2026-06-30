@@ -45,7 +45,7 @@ $cmd = $_GET['cmd'] ?? "init";
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="index.php?cmd=injection">SQL Injection</a></li>
-                        <li><a class="dropdown-item" href="index.php?cmd=sqli_secure">SQL Injection(Secure)</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=injection2">Secure Injection(Secure)</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=xss">XSS</a></li>
                     </ul>
                 </li>

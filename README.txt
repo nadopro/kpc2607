@@ -403,3 +403,22 @@ Day 2
 
 https://www.netcraft.com/blog/june-2026-web-server-survey
 
+
+IP : 1.2.3.4
+      0001 0010  0011 0100
+      1111 1111  1111 0000
+    & 0001 0010  0011 0000 = 1.2.3.0  
+    
+    
+IP Address
+
+  0000 0000
+  0111 1111 0~127
+
+A class : 0XX
+  Special Purpose Address : 10.*.*.* / 127.*.*.*
+
+B class : 1000 0000 ~ 1011 1111 : 128~191
+
+  SPA : 172.16.*.*
+

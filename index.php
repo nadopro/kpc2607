@@ -49,7 +49,7 @@ $cmd = $_GET['cmd'] ?? "init";
                         <li><a class="dropdown-item" href="index.php?cmd=injection3">Save ID</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=injection4">Secure Save</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=brute">Brute Force</a></li>
-                        <li><a class="dropdown-item" href="index.php?cmd=injection3">Save ID</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=brute2">Brute Length</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=injection3">Save ID</a></li>
 
                     </ul>

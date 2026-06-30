@@ -710,3 +710,14 @@ CREATE TABLE iot (
 ) ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_unicode_ci;
+
+
+Q14.
+
+gen.php 파일을 만들고 싶어.
+index.php?cmd=gen 으로 접속을 하고, index.php에서 이미
+$conn에 DB접속까지 마친상태야.
+
+랜덤하게 25-26도 사이의 온도(temp), 50-55 사이의 습도(hum)을
+발생한 후, 직전에 만든 iot 테이블에 넣는 작업을 할거야.
+자바스크립트로 3초마다 setTimeout()을 활용해서 반복적인 작업을 하고 싶어.

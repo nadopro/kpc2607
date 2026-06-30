@@ -69,7 +69,7 @@ $work = $_SERVER['QUERY_STRING'];
                         <li><a class="dropdown-item" href="index.php?cmd=brute2">Brute Length</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=shell">Web Shell</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=chart">Chart</a></li>
-                        <li><a class="dropdown-item" href="index.php?cmd=shell">Web Shell</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=gen">Generator</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=shell">Web Shell</a></li>
 
                         <li><a class="dropdown-item" href="index.php?cmd=shell">Web Shell</a></li>

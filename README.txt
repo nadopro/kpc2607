@@ -394,3 +394,12 @@ Q6. 현재 로그인 창 아래에 로그인 버튼만 있는데,
 
 select * from users where id='xxx' or 2>1 -- ' and pass='$pass'
                               xxx' or 2>1 -- 
+
+
+===============================================
+Day 2
+===============================================
+웹 서버 점유율
+
+https://www.netcraft.com/blog/june-2026-web-server-survey
+

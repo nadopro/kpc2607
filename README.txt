@@ -689,3 +689,24 @@ table name : log
 ) ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_unicode_ci;
+
+Q13.
+
+다음과 같은 MySQL 스키마를 정의해 줘.
+
+table name : iot 
+필드 :
+  idx : integer, auto_increment, primary key,
+  temp : float,
+  hum : float,
+  time : datetime
+
+
+CREATE TABLE iot (
+    idx INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    temp FLOAT NOT NULL,
+    hum FLOAT NOT NULL,
+    time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_unicode_ci;

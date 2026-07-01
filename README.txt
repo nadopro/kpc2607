@@ -915,3 +915,31 @@ VALUES
     '테스트 제목 3',
     '테스트 내용 3'
 );
+
+
+Q18.
+
+board.php는 index.php?cmd=board로 호출할거야.
+GET으로 mode를 보고 동작을 결정해.
+mode 없는 경우 기본적으로 mode = "list"
+mode에는 
+
+글목록보기(list), 글쓰기(write), 글쓰기 처리(do_write),
+글보기 (show), 삭제하기(delete) 가 있어.
+검색이나, 수정, 댓글달기 등은 기능에서 제외해.
+
+반응형 홈페이지이기 때문에 이미 index.php에서 bootstrap5를 사용하도록
+라이브러리가 추가 되었어.
+
+글목록 보기인 경우,
+PC에서는 글번호(idx), 글제목(title), 작성자(name), 작성일(time)
+이 표현되고, Mobile인 경우에는 글제목과 작성자만 있으면 돼.
+
+글 삭제하는 경우는 글내용 보기에서 관리자나, 작성자만 사용할 수 있어.
+
+board.php 파일을 작성해 줘.
+로그인 정보에서 세션 정보는 다음을 참고해.
+ID : <?= $_SESSION['id'] ?><br>
+이름 : <?= $_SESSION['name'] ?><br>
+권한 : <?= $_SESSION['level'] ?>
+

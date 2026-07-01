@@ -75,6 +75,7 @@ $work = $_SERVER['QUERY_STRING'];
                         <li><a class="dropdown-item" href="index.php?cmd=network">Network</a></li>
 
                         <li><a class="dropdown-item" href="index.php?cmd=board">게시판</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=editor">WYSIWYG</a></li>
 
                     </ul>
                 </li>

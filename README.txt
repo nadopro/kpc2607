@@ -943,3 +943,11 @@ ID : <?= $_SESSION['id'] ?><br>
 이름 : <?= $_SESSION['name'] ?><br>
 권한 : <?= $_SESSION['level'] ?>
 
+Q19.
+WYSIWYG 게시판에서 글쓰기 하는 부분을 예제로 만들고 싶어.
+index.php?cmd=editor
+
+상단에는 제목, 버튼입력부, 글쓰기부, 글등록 버튼 있어.
+버튼입력에는 Bold, Underline, Italic 버튼만 있어.
+각각 material-icons를 이용해서 만들어줘.
+예제를 하나 만들어 줘

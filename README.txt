@@ -1062,3 +1062,6 @@ Day 4
 
 강의자료 Share URL ( https://naver.me/GFsoYOoj )
 대소문자 구분
+
+IP 주소 정보 웹으로 얻어오기 (마지막에 IP 주소 입력)
+http://ip-api.com/json/1.2.3.4

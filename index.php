@@ -71,6 +71,7 @@ $work = $_SERVER['QUERY_STRING'];
                         <li><a class="dropdown-item" href="index.php?cmd=shell">Web Shell</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=chart">Chart</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=gen">Generator</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=monitor">Monitor</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=network">Network</a></li>
 
                         <li><a class="dropdown-item" href="index.php?cmd=shell">Web Shell</a></li>

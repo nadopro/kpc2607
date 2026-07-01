@@ -49,14 +49,16 @@ const graph = {
         { id: "홍대감" },
         { id: "홍길동" },
         { id: "이순신" },
-        { id: "유성룡" }
+        { id: "유성룡" },
+        { id: "선조" }
     ],
     links: [
         { source: "신사임당", target: "이율곡", relation: "아들" },
         { source: "홍대감", target: "홍길동", relation: "아들" },
         { source: "이율곡", target: "홍길동", relation: "친구" },
         { source: "이순신", target: "유성룡", relation: "친구" },
-        { source: "이순신", target: "이율곡", relation: "선생님" }
+        { source: "이순신", target: "이율곡", relation: "선생님" },
+        { source: "이순신", target: "선조", relation: "선생님" }
     ]
 };
 

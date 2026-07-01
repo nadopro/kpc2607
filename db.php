@@ -1,6 +1,10 @@
 <?php
 // db.php
 
+$log = "log";
+
+
+
 function connectDB()
 {
     $dbHost = "localhost";

@@ -788,7 +788,7 @@ JSON : JavaScript Object Notation
       "url" : "https://kpc.or.kr"
     }
   }
-
+Q15. 
 인물관계를 JSON으로 표시하고 싶어.
 노드와 링크로 구성되어 있어.
 노드는 인물, 링크는 관계야.
@@ -819,6 +819,7 @@ JSON : JavaScript Object Notation
   ]
 }
 
+Q16.
 
 이 데이터를 이용해서, HTML5와 D3JS를 이용해서 네트워크 다이어그램으로 그리고 싶어.
 노드는 원으로 표시하고, 안에 텍스트로 이름을 적어줘.
@@ -834,3 +835,83 @@ JSON : JavaScript Object Notation
 선에다가 마우스를 올리면 둘 사이의 관계를 텍스트로 확인할 수 있도록 해줘.
 
 
+
+
+int myfunc(int a)
+{
+  char *msg;
+  if(a <0)
+  {
+    msg = "Parameter Error";
+    goto Error;
+  }
+
+  return 0;
+
+Error:
+  printf("%s", msg);
+  // log
+
+}
+
+
+Q17.
+
+간단 게시판을 만들고 싶어.
+먼저 Mysql Schema를 만들어야 해.
+table name : board
+대략적으로 이런 형태면 돼.
+
+create table board(
+  idx integer auto_increment primary key,
+  id  varchar(30),
+  name varchar(30),
+  title varchar(100),
+  html mediumtext,
+  nread integer default '0',
+  file  varchar(30),
+  time datetime,
+
+);
+
+스키마를 만들어주고, 글 3개를 입력해 줘.
+작성자 : admin, 이름 : 관리자.
+제목 : 테스트 제목 1, 테스트 제목 2, ..
+내용 : 테스트 내용 1, 테스트 내용 2, ..
+
+
+
+
+CREATE TABLE board (
+    idx INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id VARCHAR(30) NOT NULL,
+    name VARCHAR(30) NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    html MEDIUMTEXT NOT NULL,
+    nread INT NOT NULL DEFAULT 0,
+    file VARCHAR(255) DEFAULT NULL,
+    time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO board (id, name, title, html)
+VALUES
+(
+    'admin',
+    '관리자',
+    '테스트 제목 1',
+    '테스트 내용 1'
+),
+(
+    'admin',
+    '관리자',
+    '테스트 제목 2',
+    '테스트 내용 2'
+),
+(
+    'admin',
+    '관리자',
+    '테스트 제목 3',
+    '테스트 내용 3'
+);

@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <div class="alert alert-info">
 
                         <b>현재 로그인 상태</b><br><br>
-
+                        
                         ID : <?= $_SESSION['id'] ?><br>
                         이름 : <?= $_SESSION['name'] ?><br>
                         권한 : <?= $_SESSION['level'] ?>

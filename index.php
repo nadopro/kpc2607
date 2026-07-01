@@ -34,6 +34,7 @@ $work = $_SERVER['QUERY_STRING'];
     <title>KPC 보안 프로그래밍 과정</title>
 
     <!-- Bootstrap5 -->
+     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -70,7 +71,7 @@ $work = $_SERVER['QUERY_STRING'];
                         <li><a class="dropdown-item" href="index.php?cmd=shell">Web Shell</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=chart">Chart</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=gen">Generator</a></li>
-                        <li><a class="dropdown-item" href="index.php?cmd=shell">Web Shell</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=network">Network</a></li>
 
                         <li><a class="dropdown-item" href="index.php?cmd=shell">Web Shell</a></li>
 

@@ -1041,3 +1041,18 @@ sub=2일때 하단에 페이지별로 볼 수 있도록 수정해 줘.
         location.href = "index.php?cmd=log";
     }, 10000);
     </script>
+
+
+404
+
+enum ErrorCode { 
+      Trying = 100, Ringing = 180,
+      OK = 200,
+      BadRequest = 400,
+      AuthError, Forbidden, NotFound, MethodNotAllowed, ...
+  }
+
+enum
+
+tElephoneNUM
+

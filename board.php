@@ -19,8 +19,13 @@ if ($mode == "do_write") {
         exit;
     }
 
-    $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $html  = mysqli_real_escape_string($conn, $_POST['html']);
+    //$title = mysqli_real_escape_string($conn, $_POST['title']);
+    //$html  = mysqli_real_escape_string($conn, $_POST['html']);
+
+    $title = $_POST['title'];
+    $html  = $_POST['html'];
+
+
 
     $sql = "INSERT INTO board(id, name, title, html, time)
             VALUES('$login_id', '$login_name', '$title', '$html', NOW())";
@@ -106,12 +111,12 @@ if ($mode == "list") {
                 <td>
                     <a href="index.php?cmd=board&mode=show&idx=<?= $row['idx'] ?>"
                        class="text-decoration-none">
-                        <?= htmlspecialchars($row['title']) ?>
+                        <?= $row['title'] ?>
                     </a>
                 </td>
 
                 <td class="text-center">
-                    <?= htmlspecialchars($row['name']) ?>
+                    <?= $row['name'] ?>
                 </td>
 
                 <td class="d-none d-md-table-cell text-center">
@@ -141,7 +146,7 @@ else if ($mode == "write") {
             <label class="form-label">작성자</label>
             <input type="text"
                    class="form-control"
-                   value="<?= htmlspecialchars($login_name) ?>"
+                   value="<?= $login_name ?>"
                    readonly>
         </div>
 
@@ -196,13 +201,13 @@ else if ($mode == "show") {
 
     <div class="card">
         <div class="card-header">
-            <strong><?= htmlspecialchars($row['title']) ?></strong>
+            <strong><?= $row['title'] ?></strong>
         </div>
 
         <div class="card-body">
 
             <div class="mb-3 text-muted">
-                작성자 : <?= htmlspecialchars($row['name']) ?> |
+                작성자 : <?= $row['name'] ?> |
                 작성일 : <?= $row['time'] ?> |
                 조회수 : <?= $row['nread'] ?>
             </div>
@@ -210,7 +215,7 @@ else if ($mode == "show") {
             <hr>
 
             <div style="min-height:200px;">
-                <?= nl2br(htmlspecialchars($row['html'])) ?>
+                <?= nl2br($row['html']) ?>
             </div>
 
         </div>

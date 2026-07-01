@@ -19,8 +19,13 @@ if ($mode == "do_write") {
         exit;
     }
 
-    $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $html  = mysqli_real_escape_string($conn, $_POST['html']);
+    //$title = mysqli_real_escape_string($conn, $_POST['title']);
+    //$html  = mysqli_real_escape_string($conn, $_POST['html']);
+
+    $title = $_POST['title'];
+    $html  = $_POST['html'];
+
+
 
     $sql = "INSERT INTO board(id, name, title, html, time)
             VALUES('$login_id', '$login_name', '$title', '$html', NOW())";

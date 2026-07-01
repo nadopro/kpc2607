@@ -83,11 +83,11 @@ $work = $_SERVER['QUERY_STRING'];
                 <!-- Menu2 -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                        회원관리
+                        보안코딩
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.php?cmd=login">로그인</a></li>
-                        <li><a class="dropdown-item" href="index.php?cmd=logout">로그아웃</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=attack">DDoS 흉내</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=slow">시간측정</a></li>
                     </ul>
                 </li>
 

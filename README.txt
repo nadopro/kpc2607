@@ -951,3 +951,22 @@ index.php?cmd=editor
 버튼입력에는 Bold, Underline, Italic 버튼만 있어.
 각각 material-icons를 이용해서 만들어줘.
 예제를 하나 만들어 줘
+
+
+Q20. 
+현재구조에서 index.php?cmd=slow, cmd=attack 두 링크를 만들었어.
+slow.php는 단순하게 프로그램 시작하면서 sleep(1) 후 전체 수행 시간을 출력하는
+코드로 만들거야.
+attack.php에서는 공격 PC개수와, 공격회수를 입력받아서
+자바스크립트로 fetch()를 반복적으로 수행하려고 해.
+index.php?cmd=slow를 호출하는 거지.
+
+이렇게 해서 DDoS 공격이 성능에 미치는 영향을 측정하는 방법이
+절차상으로 옳은 방법인가?
+
+21. 
+
+slow.php 파일을 만들어.
+시작할때, 시간을 측정하고 sleep(1) 후, 끝나는 시간을 측정해.
+화면에 측정된 시간을 초 단위와 ms 단위로 각각 출력해 주는 코드를 만들어줘.
+

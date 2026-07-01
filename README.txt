@@ -973,3 +973,71 @@ slow.php 파일을 만들어.
 Q22.
 
 그러면 attack.php를 만들어줘.
+
+
+Q23. 
+
+다음과 같은 코드가 있는데, 상단에 탭메뉴 형태로 만들고 싶어.
+GET으로 sub가 있가 없으면 기본 값이 1이야.
+index.php?cmd=log&sub=1
+
+sub=1일 때는 아래 코드를 그대로 사용하고,
+sub=2일 때는 최근 log 데이터를 desc 순으로 50개만 가져오도록 바꿔줘.
+sub=2일때 하단에 페이지별로 볼 수 있도록 수정해 줘.
+
+    <?php
+        $today = Date('Y-m-d'); // 2026-07-01 12:34:56
+    ?>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['시간', '클릭수'],
+
+          <?php
+            for($i=0; $i<=23; $i++)
+            {
+                $sql = "select count(*) as cnt from log where time >= '$today $i:00:00' and time <='$today $i:59:59' ";
+                $result = mysqli_query($conn, $sql);
+                $data = mysqli_fetch_array($result);
+
+                if($data)
+                    $cnt = $data['cnt'];
+                else
+                    $cnt = 0;
+
+                echo "['$i:00', $cnt], ";
+            }
+
+          ?>
+
+         
+        ]);
+
+        var options = {
+          title: '로그 관리',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+
+      }
+    </script>
+
+ 
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  
+
+    <script>
+    setTimeout(function () {
+        location.href = "index.php?cmd=log";
+    }, 10000);
+    </script>

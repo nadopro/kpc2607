@@ -1146,4 +1146,42 @@ PRETTY 처리해 줘.
 index.php?cmd=gps와 같이 실행되서 이미 bootstrap5를 사용 가능한 형태가 되어있어.
 
 
+google.com/maps?q=36.123,127.123
 
+
+
+Q25
+
+이 코드가 정상적으로 잘 동작하고 있어.
+예를 들어 1.2.3.4를 입력하는 경우 다음과 같이 JSON을 가져오고 있어.
+{
+    "status": "success",
+    "country": "Australia",
+    "countryCode": "AU",
+    "region": "QLD",
+    "regionName": "Queensland",
+    "city": "South Brisbane",
+    "zip": "4101",
+    "lat": -27.4767,
+    "lon": 153.017,
+    "timezone": "Australia\/Brisbane",
+    "isp": "Resource Quality Assurance",
+    "org": "Resource Quality Assurance",
+    "as": "",
+    "query": "1.2.3.4"
+}
+
+이 JSON 데이터를 파싱해서
+status, country, lat, lon을 각각 분리해서 변수로 넣고 싶어.
+$position = "$lat,$long"; 이렇게 분리도 하고 싶어.
+
+현재코드의 하단에 추가적으로 
+표 형태로 파싱된 결과를 출력해 줘.
+
+status : success
+county : Australia
+위치 : $position <버튼>
+버튼을 클릭하면 
+
+google.com/maps?q=$position
+을 팝업창으로 띄워.

@@ -2,8 +2,15 @@
 // gps.php
 
 $ip = $_POST['ip'] ?? '';
+
 $jsonPretty = '';
 $errorMsg = '';
+
+$status = '';
+$country = '';
+$lat = '';
+$lon = '';
+$position = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -24,21 +31,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $response = curl_exec($ch);
 
         if ($response === false) {
+
             $errorMsg = 'cURL 오류 : ' . curl_error($ch);
+
         } else {
+
             $data = json_decode($response, true);
 
             if (isset($data['status']) && $data['status'] == 'success') {
+
+                $status  = $data['status'];
+                $country = $data['country'];
+                $lat     = $data['lat'];
+                $lon     = $data['lon'];
+
+                $position = "$lat,$lon";
+
                 $jsonPretty = json_encode(
                     $data,
                     JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
                 );
+
             } else {
+
                 $errorMsg = '조회 실패';
+
                 $jsonPretty = json_encode(
                     $data,
                     JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
                 );
+
             }
         }
 
@@ -71,6 +93,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="alert alert-warning">
         <?= htmlspecialchars($errorMsg) ?>
     </div>
+<?php } ?>
+
+<?php if ($status == 'success') { ?>
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th style="width:150px;">status</th>
+        <td><?= htmlspecialchars($status) ?></td>
+    </tr>
+
+    <tr>
+        <th>country</th>
+        <td><?= htmlspecialchars($country) ?></td>
+    </tr>
+
+    <tr>
+        <th>위치</th>
+        <td>
+            <?= htmlspecialchars($position) ?>
+
+            <button type="button"
+                    class="btn btn-sm btn-primary ms-2"
+                    onclick="window.open('https://google.com/maps?q=<?= urlencode($position) ?>', 'mapPopup', 'width=900,height=700');">
+                지도 보기
+            </button>
+        </td>
+    </tr>
+</table>
+
 <?php } ?>
 
 <?php if ($jsonPretty != '') { ?>

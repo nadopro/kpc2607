@@ -110,6 +110,7 @@ $work = $_SERVER['QUERY_STRING'];
                         <li><a class="dropdown-item" href="index.php?cmd=log">로그 관리</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=log2">로그 시각화</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=join">회원가입(AJAX)</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=dice">주사위(랜덤)</a></li>
                     </ul>
                 </li>
 

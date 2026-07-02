@@ -88,6 +88,11 @@ $work = $_SERVER['QUERY_STRING'];
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="index.php?cmd=attack">DDoS 흉내</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=slow">시간측정</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=gps">IP 상세정보</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=log">접속로그</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=slow">시간측정</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=slow">시간측정</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=slow">시간측정</a></li>
                     </ul>
                 </li>
 

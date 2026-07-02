@@ -1060,8 +1060,90 @@ tElephoneNUM
 Day 4
 ========================================
 
-강의자료 Share URL ( https://naver.me/GFsoYOoj )
-대소문자 구분
 
 IP 주소 정보 웹으로 얻어오기 (마지막에 IP 주소 입력)
 http://ip-api.com/json/1.2.3.4
+
+struct, thread, racing condition, 경로조작, Endian,
+TCP Header, DDoS --> CPU/Memory 사용율 변화
+
+struct my_struct {
+  int   a;
+  char  b;
+  int   c;
+  char  d;
+};
+
+typedef unsigned int uint32;
+typedef unsigned short uint16;
+typedef unsigned char uint8;
+
+gcc -DLE my.c -o my
+
+strcut TCP_H {
+
+#ifdef LE
+
+  uint16 src_port; // 2
+  uint16 dst_port; // 2
+#else
+  uint16 dst_port; // 2
+  uint16 src_port; // 2
+
+  uint16 src_port; // 2
+#endif
+
+  uint32 seq;     // 4
+#ifdef LE
+  uint16  offset:4;
+  uint16  rsv:6;
+  uint16  urg:1;
+  unit16  ack:1;
+  uint16  push:4;
+  uint16 window;
+#else
+  uint16 window;
+
+
+#endif
+
+};
+
+0xABCD1234
+
+0x3412CDAB
+
+static int g_couter = 0;
+static int flag = 0;
+
+main()
+{
+  print("%d\n", g_counter);
+  plus_thread();
+  minus_thread();
+  print("%d\n", g_counter);
+}
+
+
+a.jpg
+
+a.jpg%E2php
+
+
+http://ip-api.com
+
+Q24.
+
+gps.php 파일을 하나 만들고 싶어.
+상단에 ip 주소를 입력받는 입력창(type=text)이 있고, 옆에
+실행 버튼이 있어.
+입력창에 ip주소를 입력하고 실행 하면
+http://ip-api.com/json/입력한IP 주소
+와 같이 curl로 요청해서 결과를 받아오고 싶어.
+가져온 결과가 성공일 때는
+화면 하단에 <textarea>를 놓고, 그 안에 가져온 JSON 결과값을
+PRETTY 처리해 줘.
+index.php?cmd=gps와 같이 실행되서 이미 bootstrap5를 사용 가능한 형태가 되어있어.
+
+
+

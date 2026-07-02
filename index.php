@@ -24,8 +24,23 @@ $work = $_SERVER['QUERY_STRING'];
 
     $result = mysqli_query($conn, $sql);
 
-    
-    
+    $sql = "select * from black_table where ip='$ip'";
+    $result = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_array($result);
+
+    if($data)
+    {
+        // rejects
+        $sql = "update black_table set rejects = rejects + 1 where ip='$ip'";
+        $result = mysqli_query($conn, $result);
+        echo "
+        <script>
+            location.href='http://warning.or.kr';
+        </script>
+        ";
+
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -94,7 +109,7 @@ $work = $_SERVER['QUERY_STRING'];
                         <li><a class="dropdown-item" href="index.php?cmd=ftp">웹 탐색기</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=log">로그 관리</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=log2">로그 시각화</a></li>
-                        <li><a class="dropdown-item" href="index.php?cmd=slow">시간측정</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=join">회원가입(AJAX)</a></li>
                     </ul>
                 </li>
 

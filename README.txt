@@ -1280,3 +1280,34 @@ alter table board add ip char(20) default "10.20.30.40";
 black_table에 추가하고 싶어.
 해당 ip와 현재시간을 추가해서 이 테이블에 등록해 줘.
 추가된 ip 정보를 처리하는 코드까지 개선해 줘.
+
+
+Q31.
+
+회원가입 입력하는 join.php 를 만들고 싶어.
+index.php?cmd=join처럼 접속해.
+현재 users 테이블은 다음과 같이 구성되어 있어.
+
+CREATE TABLE users (
+    idx INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id VARCHAR(20) NOT NULL UNIQUE,
+    name VARCHAR(30) NOT NULL,
+    pass VARCHAR(50) NOT NULL,
+    level INT(3) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+여기서는 id를 입력했을 때, 4글자 이상이고, 현재 사용 가능 여부를
+ajax로 물어보고 싶어.
+
+id에 onKeyUp 이벤트가 발생할 때, 입력한 id를 ajax_check_id.php한테 물어보고 싶어.
+4글자 미만이면, "아이디는 4글자 이상입니다."라고 <div>영역 잡아서
+출력하고,
+사용 가능한 아이디이면, text-success로 "사용 가능합니다."
+사용 불가능한 아이디(이미 가입된 아이디)이면 text-danager로 "사용 중인 아이디입니다."라고
+출력하고 싶어.
+
+이때, join.php와 ajax_check_id.php 파일을 각각 만들어줘.
+
+
+

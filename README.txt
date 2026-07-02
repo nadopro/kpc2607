@@ -1185,3 +1185,10 @@ county : Australia
 
 google.com/maps?q=$position
 을 팝업창으로 띄워.
+
+Q25.
+
+index.php?cmd=log2로 사용할 log2.php 파일을 만들고 싶다.
+버튼 하나를 만들고, "시각화"라고 출력해.
+이 버튼을 누르면 visual.php 파일을 Full Screen으로 띄우고 싶어.
+

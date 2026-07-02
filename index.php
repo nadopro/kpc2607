@@ -91,8 +91,8 @@ $work = $_SERVER['QUERY_STRING'];
                         <li><a class="dropdown-item" href="index.php?cmd=gps">IP 상세정보</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=gps2">IP AJAX</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=ftp">웹 탐색기</a></li>
-                        <li><a class="dropdown-item" href="index.php?cmd=slow">시간측정</a></li>
-                        <li><a class="dropdown-item" href="index.php?cmd=slow">시간측정</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=log">로그 관리</a></li>
+                        <li><a class="dropdown-item" href="index.php?cmd=log2">로그 시각화</a></li>
                         <li><a class="dropdown-item" href="index.php?cmd=slow">시간측정</a></li>
                     </ul>
                 </li>

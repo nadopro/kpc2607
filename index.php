@@ -24,7 +24,8 @@ $work = $_SERVER['QUERY_STRING'];
 
     $result = mysqli_query($conn, $sql);
 
-
+    
+    
 ?>
 <!DOCTYPE html>
 <html lang="ko">

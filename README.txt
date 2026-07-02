@@ -1234,3 +1234,49 @@ ip별로 접속한 회수도 저장해야 돼.
 
 Q27. 앞의 코드에서 네트워크 대역별로 1개의 컴퓨터만 있는 경우는
 json 파일을 만들때 제외해 줘.
+
+Q28.
+
+첨부한 visual2.php 파일을 이용해서, 코드를 변경하고 싶어.
+네트워크 다이어그램으로 그린 결과를 Collapsible tree 형태로 바꿔서 
+그릴 수 있도록 코드를 변경해 줘.
+
+Q29.
+
+블랙리스트 관리를 위해 black_table 스키마를 만들고 싶어.
+idx (primary key, int, auto_increment),
+ip,
+time,
+rejects int default '0'
+
+이때 rejects는 목록에 추가된 후, 차단되는 회수를 추가할 목적이야.
+
+
+
+alter table board add ip char(20) default "10.20.30.40";
+
+CREATE TABLE black_table (
+    idx INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    ip VARCHAR(45) NOT NULL,
+    time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    rejects INT NOT NULL DEFAULT 0,
+
+    UNIQUE KEY uk_ip (ip)
+) ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
+
+Q30.
+
+board 테이블에 
+alter table board add ip char(20) default "10.20.30.40";
+이렇게 ip 필드를 추가했어.
+
+첨부한 board.php파일에서 목록보기를 변경하고 싶어.
+만약에 관리자인 경우에는 "블랙리스트 등록" 버튼을 추가해 줘.
+이 버튼을 클릭하면,
+"블랙리스트로 등록하시겠습니까?"라고 묻고, 확인 하는 경우는
+
+black_table에 추가하고 싶어.
+해당 ip와 현재시간을 추가해서 이 테이블에 등록해 줘.
+추가된 ip 정보를 처리하는 코드까지 개선해 줘.

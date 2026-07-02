@@ -1257,7 +1257,7 @@ alter table board add ip char(20) default "10.20.30.40";
 
 CREATE TABLE black_table (
     idx INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    ip VARCHAR(45) NOT NULL,
+    ip VARCHAR(45) UNIQUE NOT NULL,
     time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     rejects INT NOT NULL DEFAULT 0,
 
